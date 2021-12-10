@@ -66,7 +66,9 @@ public class DataProcessor {
     }
 
     public static List<Integer> getSortedAges(List<Student> students) {
-        return new ArrayList<>();
+        return students.stream()
+                .map(s -> s.getAge())
+                .collect(Collectors.toList());
     }
 
     // endregion
